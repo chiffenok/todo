@@ -8,11 +8,10 @@ import {
     Typography,
     Paper,
     CssBaseline,
-    List
 } from '@material-ui/core';
 
 import withStyles from '@material-ui/core/styles/withStyles';
-import TodoItem from "./components/TodoItem";
+import TodoList from "./components/TodoList";
 
 const styles = theme => ({
     main: {
@@ -51,27 +50,14 @@ class App extends Component {
                 <AppBar position="static">
                     <Toolbar>
                         <Typography variant="h6" color="inherit">
-                            Photos
+                            Todo List
                         </Typography>
                     </Toolbar>
                 </AppBar>
                 <main className={classes.main}>
                     <Grid container spacing={32}>
                         <Grid item xs={12} sm={9}>
-                            <Paper className={classes.paper} elevation={1}>
-                                <Typography variant="h5" component="h3">
-                                    This is a sheet of paper.
-                                </Typography>
-                                <Typography component="p">
-                                    Paper can be used to build surface or other elements for your application.
-                                </Typography>
-                            </Paper>
-
-                            <List className={classes.list}>
-                                {[0, 1, 2, 3].map(value => (
-                                    <TodoItem item={value}/>
-                                ))}
-                            </List>
+                            <TodoList />
                         </Grid>
                         <Grid item xs={12} sm={3}>
                             <Paper className={classes.paper} elevation={1}>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {createMuiTheme, withTheme} from '@material-ui/core/styles';
+import { withTheme } from '@material-ui/core/styles';
 import {
     Grid,
     AppBar,

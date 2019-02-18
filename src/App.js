@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './App.css';
 import { withTheme } from '@material-ui/core/styles';
 import {
@@ -11,7 +12,7 @@ import {
 } from '@material-ui/core';
 
 import withStyles from '@material-ui/core/styles/withStyles';
-import TodoList from "./components/TodoList";
+import TodoList from './components/TodoList';
 
 const styles = theme => ({
     main: {
@@ -22,7 +23,7 @@ const styles = theme => ({
             width: 1100,
             marginLeft: 'auto',
             marginRight: 'auto',
-        }
+        },
     },
     paper: {
         marginTop: theme.spacing.unit * 1,
@@ -32,21 +33,19 @@ const styles = theme => ({
             marginTop: theme.spacing.unit * 3,
             marginBottom: theme.spacing.unit * 3,
             padding: theme.spacing.unit * 3,
-        }
+        },
     },
     list: {
-        backgroundColor: theme.palette.background.paper
-    }
+        backgroundColor: theme.palette.background.paper,
+    },
 });
 
 class App extends Component {
-
     render() {
         const { classes } = this.props;
-
         return (
             <React.Fragment>
-                <CssBaseline/>
+                <CssBaseline />
                 <AppBar position="static">
                     <Toolbar>
                         <Typography variant="h6" color="inherit">
@@ -74,8 +73,10 @@ class App extends Component {
             </React.Fragment>
         );
     }
-
-
 }
 
 export default withTheme()(withStyles(styles)(App));
+
+App.propTypes = {
+    classes: PropTypes.string,
+};
